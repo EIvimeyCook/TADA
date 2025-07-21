@@ -1,0 +1,55 @@
+---
+title: "Caterpillar Abundance Analysis"
+author: "Edward R. Ivimey-Cook"
+output: html_document
+---
+  
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+## Load packages  
+library(dplyr)
+library(ggplot2)
+library(here)
+```
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+## Load caterpillar abundance data (w/o local file paths)
+data <- read.csv(here("caterpillar_data", "data.csv"))
+```
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+## Summarise the mean number of caterpillars with error
+summary_data <- data %>%
+  group_by(habitat) %>%
+  summarise(
+    mean_count = mean(caterpillar_count),
+    sd = sd(caterpillar_count),
+  )
+```
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+## Remove values from habitat D as these are an error
+filtered_data <- data %>%
+  filter(habitat != "D")
+```
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+## Run a Poisson general linear model to analyse caterpillar abundance varying with habitat. Produces numeric results in “Caterpillar Abundance”
+model1 <- glm(caterpillar_count ~ habitat,
+              family = poisson, data = filtered_data)
+
+summary(model1)
+```
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+## Create figure 1, caterpillar count against habitat
+figure1 <- ggplot(
+  filtered_data,
+  aes(x = habitat, y = caterpillar_count)
+) +
+  geom_boxplot() +
+  theme_bw()
+
+print(figure1)
+```
+
+
