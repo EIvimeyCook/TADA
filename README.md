@@ -28,7 +28,9 @@ TADA/
 ├── caterpillar_data/
 │   └── data.csv
 ├── Caterpillar.Rmd
-└── index.html
+├── index.html
+└── README.md
+
 ```
 
 ## Data Files
