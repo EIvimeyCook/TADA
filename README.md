@@ -24,7 +24,7 @@ This data is licensed under CC-BY-4.0
 
 ## Directory Structure
 ```text
-TADA_repo/
+TADA/
 ├── caterpillar_data/
 │   └── data.csv
 ├── Caterpillar.Rmd
