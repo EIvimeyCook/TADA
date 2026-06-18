@@ -15,6 +15,9 @@ The only code file is the Caterpillar.Rmd which has all the code needed to run. 
 ## Affiliations
 - University of East Anglia, UK
 
+## Funders
+- SORTEE
+
 ## Contact
 📧 E.Ivimey-Cook@uea.ac.uk
 
@@ -28,6 +31,7 @@ TADA/
 ├── caterpillar_data/
 │   └── data.csv
 ├── Caterpillar.Rmd
+├── MyCode.R
 ├── index.html
 └── README.md
 
@@ -57,8 +61,11 @@ The html output for the TADA! website.
 ## Code
 Scripts should be run in the following order:
 
+1. **`MyCode.R`**
+   
+   The R code used for importing data, filtering, modelling, and visualisation. 
 
-1. **`Caterpillar.Rmd`**
+2. **`Caterpillar.Rmd`**
    
    The RMarkdown file to create an example report
 
