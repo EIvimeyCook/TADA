@@ -63,7 +63,7 @@ Scripts should be run in the following order:
 
 1. **`MyCode.R`**
    
-   The R code used for importing data, filtering, modelling, and visualisation. 
+   Load packages, imports caterpillar_data, runs a poisson glm on filtered data. Produces Figure 1.
 
 2. **`Caterpillar.Rmd`**
    
