@@ -4,7 +4,7 @@ library(ggplot2)
 library(here)
 
 # Load caterpillar abundance data (w/o local file paths)#####
-data <- read.csv(here(“caterpillar_data” , "data.csv"))
+data <- read.csv(here("caterpillar_data" , "data.csv"))
 
 # Summarise the mean number caterpillars with error#####
 summary_data <- data %>%
@@ -16,7 +16,7 @@ summary_data <- data %>%
 
 # Remove values from habitat D as these are an error##### 
 filtered_data <- data %>%
-filter(habitat != “D”)
+filter(habitat != "D")
 
 # Run a Poisson general linear model######                [
 # To analyse caterpillar abundance varying with habitat
