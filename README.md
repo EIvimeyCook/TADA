@@ -25,8 +25,8 @@ The only code file is the Caterpillar.Rmd which has all the code needed to run. 
 📧 E.Ivimey-Cook@uea.ac.uk
 
 ## License
-This code is licensed under MIT.
-This data is licensed under CC-BY-4.0
+Code is licensed under the [MIT License](LICENSE.md).
+Data are licensed under [CC BY 4.0](LICENSE-data.md).
 
 ## Directory Structure
 ```text
@@ -84,3 +84,5 @@ Scripts should be run in the following order:
 ---
 *README generated with READMEBuilder on 18 June 2026.*
 
+A machine-readable [`CITATION.cff`](CITATION.cff) is included, so GitHub's
+"Cite this repository" button gives formatted APA and BibTeX.
