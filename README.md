@@ -1,7 +1,10 @@
 # Caterpillar Abundance Analysis
 
-![License](https://img.shields.io/badge/license-MIT-green)
-![License](https://img.shields.io/badge/license-CC%20BY%204.0-green)
+<!-- badges: start -->
+[![Preprint](https://img.shields.io/badge/preprint-10.32942%2FX2D93K-blue)](https://doi.org/10.32942/X2D93K)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE.md)
+[![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-green)](LICENSE-data.md)
+<!-- badges: end -->
 
 ## Description
 This is an example repository for the TADA! Simple guidelines to improve analytical code sharing for transparency and reproducibility manuscript. Note this is example data.
