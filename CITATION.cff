@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the preprint below."
+type: software
+authors:
+  - family-names: "Ivimey-Cook"
+    given-names: "Edward R."
+    orcid: "https://orcid.org/0000-0003-4910-0443"
+  - family-names: "Pick"
+    given-names: "Joel L."
+    orcid: "https://orcid.org/0000-0002-6295-3742"
+title: "Example repository for: 'TADA! Simple guidelines to improve analytical code sharing for transparency and reproducibility'"
+url: "https://github.com/EIvimeyCook/TADA"
+license: MIT
+keywords:
+  - "open science"
+  - "reproducibility"
+  - "code sharing"
+  - "FAIR principles"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Ivimey-Cook"
+      given-names: "Edward R."
+      orcid: "https://orcid.org/0000-0003-4910-0443"
+    - family-names: "Pick"
+      given-names: "Joel L."
+  title: "TADA! Simple guidelines to improve analytical code sharing for transparency and reproducibility"
+  journal: "EcoEvoRxiv"
+  year: 2025
+  doi: 10.32942/X2D93K
+  notes: "Preprint, not peer reviewed. Full author list on the record - expand before publishing."
