@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite the preprint below."
-type: software
+type: dataset
 authors:
   - family-names: "Ivimey-Cook"
     given-names: "Edward R."
@@ -29,3 +29,6 @@ preferred-citation:
   year: 2025
   doi: 10.32942/X2D93K
   notes: "Preprint, not peer reviewed. Full author list on the record - expand before publishing."
+license:
+- MIT
+- CC-BY-4.0
