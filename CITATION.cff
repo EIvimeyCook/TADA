@@ -30,5 +30,5 @@ preferred-citation:
   doi: 10.32942/X2D93K
   notes: "Preprint, not peer reviewed. Full author list on the record - expand before publishing."
 license:
-- MIT
-- CC-BY-4.0
+  - MIT
+  - CC-BY-4.0
