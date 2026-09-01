@@ -1,4 +1,6 @@
-# Caterpillar Abundance Analysis
+# TADA — worked example
+
+## Caterpillar Abundance Analysis
 
 <!-- badges: start -->
 [![Preprint](https://img.shields.io/badge/preprint-10.32942%2FX2D93K-blue)](https://doi.org/10.32942/X2D93K)
@@ -7,7 +9,7 @@
 <!-- badges: end -->
 
 ## Description
-This is an example repository for the TADA! Simple guidelines to improve analytical code sharing for transparency and reproducibility manuscript. Note this is example data.
+This is an example repository for "TADA! Simple guidelines to improve analytical code sharing for transparency and reproducibility" manuscript. Note this is example data.
 
 ## Instructions
 The only code file is the Caterpillar.Rmd which has all the code needed to run. Data is in the caterpillar_data folder (data.csv).
@@ -22,7 +24,8 @@ The only code file is the Caterpillar.Rmd which has all the code needed to run. 
 - SORTEE
 
 ## Contact
-📧 E.Ivimey-Cook@uea.ac.uk
+- Edward R. Ivimey-Cook — <e.ivimeycook@gmail.com> —
+[ORCID 0000-0003-4910-0443](https://orcid.org/0000-0003-4910-0443)
 
 ## License
 Code is licensed under the [MIT License](LICENSE.md).
@@ -83,6 +86,8 @@ Scripts should be run in the following order:
 
 ---
 *README generated with READMEBuilder on 18 June 2026.*
+
+## Citation
 
 A machine-readable [`CITATION.cff`](CITATION.cff) is included, so GitHub's
 "Cite this repository" button gives formatted APA and BibTeX.
