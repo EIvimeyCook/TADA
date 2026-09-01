@@ -10,7 +10,6 @@ authors:
     orcid: "https://orcid.org/0000-0002-6295-3742"
 title: "Example repository for: 'TADA! Simple guidelines to improve analytical code sharing for transparency and reproducibility'"
 url: "https://github.com/EIvimeyCook/TADA"
-license: MIT
 keywords:
   - "open science"
   - "reproducibility"
