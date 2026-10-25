@@ -9,13 +9,15 @@
 <!-- badges: end -->
 
 ## Description
-This is an example repository for "TADA! Simple guidelines to improve analytical code sharing for transparency and reproducibility" manuscript. Note this is example data.
+This is an example repository for the "TADA! Simple guidelines to improve analytical code sharing for transparency and reproducibility" manuscript. Note that this is example data.
 
 ## Instructions
-The only code file is the Caterpillar.Rmd which has all the code needed to run. Data is in the caterpillar_data folder (data.csv).
+There are two code files, which run the same analysis: `MyCode.R` (a plain R script) and `Caterpillar.Rmd` (the same code as an R Markdown report). Either can be run on its own. Data are in the `caterpillar_data` folder (`data.csv`).
+
+Run the code from this folder (for example, open it as your working directory in RStudio), so that `here::here()` finds the data. Install `dplyr`, `ggplot2` and `here` first. Functions from these packages are called by namespace (`package::function()`), so it is clear which package each comes from. The code uses the native `|>` pipe, so it needs R 4.1 or later. Running both files takes a few seconds.
 
 ## Authors
-- Edward R. Ivimey-Cook -
+- Edward R. Ivimey-Cook
 
 ## Affiliations
 - University of East Anglia, UK
@@ -28,7 +30,10 @@ The only code file is the Caterpillar.Rmd which has all the code needed to run. 
 TADA/
 ├── caterpillar_data/
 │   └── data.csv
+├── CITATION.cff
 ├── Caterpillar.Rmd
+├── LICENSE-data.md
+├── LICENSE.md
 ├── MyCode.R
 ├── index.html
 └── README.md
@@ -57,15 +62,15 @@ Caterpillar count per habitat
 The html output for the TADA! website.
 
 ## Code
-Scripts should be run in the following order:
+The two files are independent and can be run in either order:
 
-1. **`MyCode.R`**
+- **`MyCode.R`**
    
-   Load packages, imports caterpillar_data, runs a poisson glm on filtered data. Produces Figure 1.
+   Imports `caterpillar_data/data.csv`, removes habitat D (erroneous), summarises counts by habitat and runs a Poisson GLM on the filtered data. Produces the numeric results in "Caterpillar Abundance" and Figure 1.
 
-2. **`Caterpillar.Rmd`**
+- **`Caterpillar.Rmd`**
    
-   The RMarkdown file to create an example report
+   The same analysis as an R Markdown report, ending with the session information (R and package versions). `rmarkdown::render("Caterpillar.Rmd", output_file = "index.html")` produces `index.html` (the RStudio Knit button names it `Caterpillar.html`).
 
 ## R Environment
 **R version:** 4.5.2

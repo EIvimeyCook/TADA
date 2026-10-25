@@ -10,14 +10,29 @@ output:
     code_folding: show
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
 ## Introduction
 
 This report examines how caterpillar abundance varies across habitat types,
 using a Poisson generalised linear model and a boxplot of counts by habitat.
+It produces the numeric results in the "Caterpillar Abundance" section of the
+manuscript and Figure 1.
 
-### Packages  
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
-## Load packages  
+### Packages
+
+The analysis uses three packages: `dplyr` (summarising and filtering data),
+`ggplot2` (Figure 1) and `here` (relative file paths). They are loaded with
+`library()` at the start, so the packages needed are listed in one place and a
+missing package gives an error straight away. Functions from these packages are
+also called with their package name (for example `dplyr::filter()`), so it is
+clear where each one comes from. The R and package versions used are listed under
+[Session information](#session-information) at the end of this report.
+
+```{r packages}
+## Load packages (R 4.1 or later is needed for the |> pipe)
 library(dplyr)
 library(ggplot2)
 library(here)
@@ -28,58 +43,79 @@ library(here)
 ### Import
 
 Caterpillar counts and their associated habitat are read in from a CSV file,
-using `here::here()` so the path resolves without relying on local file
-paths.
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
-## Load caterpillar abundance data (w/o local file paths)
-data <- read.csv(here("caterpillar_data", "data.csv"))
-```
-### Descriptive summary
+using `here::here()` so the path is relative to the project folder and does not
+rely on local file paths.
 
-The mean number of caterpillars, with standard deviation, is summarised by
-habitat.
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
-## Summarise the mean number of caterpillars with error
-summary_data <- data %>%
-  group_by(habitat) %>%
-  summarise(
-    mean_count = mean(caterpillar_count),
-    sd = sd(caterpillar_count),
-  )
+```{r import}
+## Load caterpillar abundance data (relative path, no local file paths)
+data <- read.csv(here::here("caterpillar_data", "data.csv"))
 ```
+
 ### Removing erroneous records
 
 Values from habitat D are removed, as these are known to be an error.
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
+
+```{r filter}
 ## Remove values from habitat D as these are an error
-filtered_data <- data %>%
-  filter(habitat != "D")
+filtered_data <- data |>
+  dplyr::filter(habitat != "D")
 ```
+
+### Descriptive summary
+
+The mean number of caterpillars, with standard deviation, is summarised for
+each habitat, after habitat D has been removed.
+
+```{r summary}
+## Summarise the mean number of caterpillars, with standard deviation, by habitat
+summary_data <- filtered_data |>
+  dplyr::group_by(habitat) |>
+  dplyr::summarise(
+    mean_count = mean(caterpillar_count),
+    sd = sd(caterpillar_count)
+  )
+
+summary_data
+```
+
 ## Statistical analysis
 
 A Poisson generalised linear model is used to analyse caterpillar abundance
 by habitat.
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
-## Run a Poisson general linear model to analyse caterpillar abundance varying with habitat. Produces numeric results in “Caterpillar Abundance”
+
+```{r model}
+## Run a Poisson generalised linear model to analyse caterpillar abundance
+## varying with habitat. Produces numeric results in "Caterpillar Abundance"
 model1 <- glm(caterpillar_count ~ habitat,
               family = poisson, data = filtered_data)
 
 summary(model1)
 ```
+
 Habitat significantly alters caterpillar abundance.
 
 ## Visualisation
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
-## Create figure 1, caterpillar count against habitat
-figure1 <- ggplot(
+
+```{r figure1}
+## Create Figure 1, caterpillar count against habitat
+figure1 <- ggplot2::ggplot(
   filtered_data,
-  aes(x = habitat, y = caterpillar_count)
+  ggplot2::aes(x = habitat, y = caterpillar_count)
 ) +
-  geom_boxplot() +
-  theme_bw()
+  ggplot2::geom_boxplot() +
+  ggplot2::theme_bw()
 
 print(figure1)
 ```
 
 Habitat E has the highest caterpillar count.
 
+## Session information
+
+The R version, operating system and package versions used to produce this
+report.
+
+```{r session-info}
+## Record the computational environment
+sessionInfo()
+```
