@@ -18,11 +18,11 @@ summary_data <- data %>%
 filtered_data <- data %>%
 filter(habitat != "D")
 
-# Run a Poisson general linear model######                [
+# Run a Poisson generalised linear model######                [
 # To analyse caterpillar abundance varying with habitat
 # Numeric results in “Caterpillar Abundance”
 model1 <- glm(caterpillar_count ~ habitat,
-  family = Poisson, data = filtered_data
+  family = poisson, data = filtered_data
 )
 
 # Create figure 1, caterpillar count against habitat####
