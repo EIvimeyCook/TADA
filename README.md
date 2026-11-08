@@ -14,7 +14,7 @@ This is an example repository for the "TADA! Simple guidelines to improve analyt
 ## Instructions
 There are two code files, which run the same analysis: `MyCode.R` (a plain R script) and `Caterpillar.Rmd` (the same code as an R Markdown report). Either can be run on its own. Data are in the `caterpillar_data` folder (`data.csv`).
 
-Run the code from this folder (for example, open it as your working directory in RStudio), so that `here::here()` finds the data. Install `dplyr`, `ggplot2` and `here` first. Functions from these packages are called by namespace (`package::function()`), so it is clear which package each comes from. The code uses the native `|>` pipe, so it needs R 4.1 or later. Running both files takes a few seconds.
+Run the code from this folder (for example, open it as your working directory in RStudio), so that `here::here()` finds the data. Install `dplyr`, `ggplot2` and `here` first. To render `Caterpillar.Rmd` you also need `rmarkdown` and pandoc (pandoc comes with RStudio; outside RStudio, install it separately). Functions from these packages are called by namespace (`package::function()`), so it is clear which package each comes from. The code uses the native `|>` pipe, so it needs R 4.1 or later. Running both files takes a few seconds.
 
 ## Authors
 - Edward R. Ivimey-Cook
@@ -52,8 +52,8 @@ Caterpillar count per habitat
 
 | Column | Type | Description | Units | Summary |
 | :----- | :--- | :---------- | :---- | :------ |
-| `habitat` | categorical | Habitats A-E |  | levels: A, B, C, D, E | NAs: 0 |
-| `caterpillar_count` | numeric | Number of caterpillars found during surveying | Number of Caterpillars | range 2–36 | mean 15.11 | NAs: 0 |
+| `habitat` | categorical | Habitats A-E |  | levels: A, B, C, D, E; NAs: 0 |
+| `caterpillar_count` | numeric | Number of caterpillars found during surveying | Number of Caterpillars | range 2–36; mean 15.11; NAs: 0 |
 
 ## Other Files
 
@@ -78,15 +78,18 @@ The two files are independent and can be run in either order:
 | Package | Version |
 | :------ | :------ |
 | `dplyr` | 1.2.1 |
-| `ggplot2` | 4.0.2 |
+| `ggplot2` | 4.0.3 |
 | `here` | 1.0.2 |
+| `rmarkdown` | 2.32 |
 
 ---
 *README generated with READMEBuilder on 18 June 2026.*
 
 ## Citation
 
-A machine-readable [`CITATION.cff`](CITATION.cff) is included, so GitHub's
+Please cite: Ivimey-Cook, E.R., Culina, A., Dimri, S., Grainger, M.J., Kar, F., Lagisz, M., Moran, N.P., Nakagawa, S., Roche, D.G., Tattan, S., Sánchez-Tójar, A., Windecker, S.M. & Pick, J.L. (2025). TADA! Simple guidelines to improve analytical code sharing for transparency and reproducibility. EcoEvoRxiv. https://doi.org/10.32942/X2D93K
+
+A machine-readable [`CITATION.cff`](CITATION.cff) is also included, so GitHub's
 "Cite this repository" button gives formatted APA and BibTeX.
 
 ## Contact
