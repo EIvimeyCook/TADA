@@ -82,8 +82,6 @@ The two files are independent and can be run in either order:
 | `here` | 1.0.2 |
 | `rmarkdown` | 2.32 |
 
----
-*README generated with READMEBuilder on 18 June 2026.*
 
 ## Citation
 
